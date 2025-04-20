@@ -21,5 +21,8 @@
 !/kitty/
 !/kitty/*
 !/kitty/**
+!/uwsm/
+!/uwsm/*
+!/uwsm/**
 !brave-flags.conf
 !chromium-flags.conf
