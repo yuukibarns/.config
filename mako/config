@@ -1,0 +1,8 @@
+[urgency=low]
+default-timeout=3000
+
+[urgency=normal]
+default-timeout=5000
+
+[urgency=high]
+default-timeout=0
