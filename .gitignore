@@ -15,5 +15,11 @@
 !/wofi/
 !/wofi/*
 !/wofi/**
+!/ghostty/
+!/ghostty/*
+!/ghostty/**
+!/kitty/
+!/kitty/*
+!/kitty/**
 !brave-flags.conf
 !chromium-flags.conf
