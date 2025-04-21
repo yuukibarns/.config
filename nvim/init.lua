@@ -20,6 +20,7 @@ vim.g.tex_flavor = "latex"
 -- MARKDOWN-PREVIEW
 vim.g.mkdp_theme = "dark"
 vim.g.mkdp_page_title = "${name}"
+vim.g.mkdp_auto_close = 0
 
 -- NANOLS
 vim.g.markdown_fenced_languages = {

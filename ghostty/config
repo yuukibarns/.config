@@ -43,7 +43,7 @@
 # resize-overlay-duration = 4s 200ms
 
 command = /bin/fish
-theme = Builtin Tango Dark
+theme = Adwaita Dark
 
 # font-family = CaskaydiaMono Nerd Font
 font-size = 11
