@@ -1,7 +1,7 @@
 local options = {
     base46 = {
         theme = "gruvbox",
-        transparency = true,
+        transparency = false,
         hl_add = {
             Conceal = { link = "@function.latex" },
             ["@none.latex"] = { link = "Normal" },

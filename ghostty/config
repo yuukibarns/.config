@@ -56,7 +56,7 @@ cursor-style-blink = true
 
 mouse-hide-while-typing = true
 
-window-height = 40
+window-height = 41
 window-width = 100
 window-padding-x = 0
 window-padding-y = 0

@@ -37,22 +37,22 @@ return {
                     deepseek = {
                         disable = false,
                         endpoint = "https://api.deepseek.com/chat/completions",
-                        secret = os.getenv("DEEPSEEK_API_KEY"),
+                        secret = { "kwallet-query", "kdewallet", "-f", "AI Keys", "-r", "deepseek" },
                     },
                     alibaba = {
                         disable = true,
                         endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
-                        secret = os.getenv("DASHSCOPE_API_KEY")
+                        secret = { "kwallet-query", "kdewallet", "-f", "AI Keys", "-r", "alibaba" },
                     },
                     siliconflow = {
                         disable = true,
                         endpoint = "https://api.siliconflow.cn/v1/chat/completions",
-                        secret = os.getenv("SILICONFLOW_API_KEY")
+                        secret = { "kwallet-query", "kdewallet", "-f", "AI Keys", "-r", "siliconflow" },
                     },
                     volcengine = {
                         disable = false,
                         endpoint = "https://ark.cn-beijing.volces.com/api/v3/chat/completions",
-                        secret = os.getenv("VOLCENGINE_API_KEY")
+                        secret = { "kwallet-query", "kdewallet", "-f", "AI Keys", "-r", "volcengine" },
                     }
                 },
                 agents = {

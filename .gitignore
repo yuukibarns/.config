@@ -24,5 +24,8 @@
 !/uwsm/
 !/uwsm/*
 !/uwsm/**
+!/fish/
+!/fish/*
+!/fish/**
 !brave-flags.conf
 !chromium-flags.conf
