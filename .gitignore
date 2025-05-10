@@ -27,5 +27,11 @@
 !/fish/
 !/fish/*
 !/fish/**
+!/xdg-desktop-portal/
+!/xdg-desktop-portal/*
+!/xdg-desktop-portal/**
+!/uv/
+!/uv/*
+!/uv/**
 !brave-flags.conf
 !chromium-flags.conf

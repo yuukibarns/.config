@@ -1,9 +1,9 @@
 return {
     -- filesype plugin for markdown
     {
-        "yuukibarns/markdown.nvim",
+        "jzr/markdown.nvim",
         lazy = false,
-        ft = { "markdown", "tex", "python" },
+        ft = { "markdown", "tex" },
 
         config = function()
             require("markdown").setup({
@@ -25,6 +25,26 @@ return {
 
     -- Faster LuaLS setup for Neovim
     { "folke/lazydev.nvim", ft = "lua", config = true },
+
+    {
+        "yuukibarns/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        -- download the pre-built binary
+        -- build = function()
+        --     require("lazy").load({ plugins = { "markdown-preview.nvim" } })
+        --     vim.fn["mkdp#util#install"]()
+        -- end,
+        build = "cd app && yarn install",
+        keys = {
+            {
+                "<leader>cp",
+                ft = "markdown",
+                "<cmd>MarkdownPreviewToggle<cr>",
+                desc = "Markdown Preview",
+            },
+        },
+    },
 
     -- {
     --     "jannis-baum/vivify.vim",
@@ -68,24 +88,4 @@ return {
     --         vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
     --     end,
     -- },
-
-    {
-        "yuukibarns/markdown-preview.nvim",
-        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        ft = { "markdown" },
-        -- download the pre-built binary
-        -- build = function()
-        --     require("lazy").load({ plugins = { "markdown-preview.nvim" } })
-        --     vim.fn["mkdp#util#install"]()
-        -- end,
-        build = "cd app && yarn install",
-        keys = {
-            {
-                "<leader>cp",
-                ft = "markdown",
-                "<cmd>MarkdownPreviewToggle<cr>",
-                desc = "Markdown Preview",
-            },
-        },
-    },
 }

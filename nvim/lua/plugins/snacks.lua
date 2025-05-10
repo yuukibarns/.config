@@ -24,7 +24,7 @@ return {
                     vim.cmd('normal! \x1b')
                 end,
                 mode = { "n", "v" },
-                ft = { "tex", "markdown", "python" },
+                ft = { "tex", "markdown" },
                 desc = "Close images inline"
             },
         },

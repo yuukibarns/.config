@@ -67,7 +67,7 @@ return {
                         diagnostics = { ignoredPatterns = { "^Overfull", "^Underfull" } },
                     },
                 },
-                -- clangd = {},
+                clangd = {},
                 denols = {},
                 pyright = {
                     pyright = {
@@ -167,6 +167,8 @@ return {
                 lua = { "stylua" },
                 tex = { "tex-fmt" },
                 python = { "ruff_format", "injected" },
+                cpp = { "clang-format" },
+                c = { "clang-format" },
             },
         },
     },
