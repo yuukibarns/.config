@@ -2,8 +2,8 @@ return {
 
     --snippets
     {
-        "yuukibarns/LuaSnip",
-        lazy = true,
+        "L3MON4D3/LuaSnip",
+        lazy = false,
         --build = "make install_jsregexp",
         dependencies = {
             "rafamadriz/friendly-snippets",
@@ -23,6 +23,13 @@ return {
             local ls = require("luasnip")
             local types = require("luasnip.util.types")
 
+            -- FIX: undo break on every auto expand
+            -- local auto_expand = ls.expand_auto
+            -- ls.expand_auto = function(...)
+            --     vim.o.undolevels = vim.o.undolevels
+            --     auto_expand(...)
+            -- end
+
             ls.setup({
                 update_events = "TextChanged,TextChangedI",
                 delete_check_events = "TextChanged",
@@ -39,7 +46,6 @@ return {
     {
         'Saghen/blink.cmp',
         dependencies = {
-            'yuukibarns/LuaSnip',
             "moyiz/blink-emoji.nvim",
             "yuukibarns/blink-cmp-rg.nvim",
             {
