@@ -2,7 +2,7 @@ return {
     {
         "yuukibarns/snacks.nvim",
         branch = "test2",
-        commit = "79ce1180b16be2bb14c67fb2b4c6a0ecb2959582",
+        -- commit = "79ce1180b16be2bb14c67fb2b4c6a0ecb2959582",
         lazy = false,
         priority = 1000,
         keys = {

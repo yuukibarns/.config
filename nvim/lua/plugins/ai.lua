@@ -125,35 +125,25 @@ return {
     },
 
     -- {
-    --     "olimorris/codecompanion.nvim",
-    --     config = true,
-    --     dependencies = {
-    --         "nvim-lua/plenary.nvim",
-    --         "nvim-treesitter/nvim-treesitter",
-    --     },
-    -- },
-
-    -- {
     --     "yetone/avante.nvim",
     --     event = "VeryLazy",
-    --     lazy = false,
-    --     version = false,
+    --     version = false, -- Never set this value to "*"! Never!
+    --     opts = {
+    --         provider = "volcengine",
+    --         vendors = {
+    --             volcengine = {
+    --                 endpoint = 'https://ark.cn-beijing.volces.com/api/v3/chat/completions',
+    --                 model = 'deepseek-v3-250324',
+    --             }
+    --         }
+    --     },
     --     build = "make",
     --     dependencies = {
     --         "stevearc/dressing.nvim",
     --         "nvim-lua/plenary.nvim",
     --         "MunifTanjim/nui.nvim",
+    --         "ibhagwan/fzf-lua",
+    --         "echasnovski/mini.icons",
     --     },
-    --     opts = {
-    --         provider = "deepseek",
-    --         vendors = {
-    --             deepseek = {
-    --                 __inherited_from = "openai",
-    --                 api_key_name = "DEEPSEEK_API_KEY",
-    --                 endpoint = "https://api.deepseek.com",
-    --                 model = "deepseek-chat",
-    --             },
-    --         },
-    --     },
-    -- },
+    -- }
 }

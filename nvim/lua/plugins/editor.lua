@@ -1,4 +1,18 @@
 return {
+    -- my diff watch
+    {
+        "yuukibarns/diffwatch.nvim",
+        keys = {
+            { "<leader>cw", "<Cmd>DiffWatchToggle<CR>", desc = "Diff Watch Toggle" },
+            { "<leader>cr", "<Cmd>DiffWatchReset<CR>",  desc = "Diff Watch Reset" },
+            { "[w",         "<Cmd>DiffWatchPrev<CR>",   desc = "Diff Watch Prev" },
+            { "]w",         "<Cmd>DiffWatchNext<CR>",   desc = "Diff Watch Next" },
+        },
+        config = function()
+            require("diffwatch").setup()
+        end
+    },
+
     -- file explorer
     {
         "stevearc/oil.nvim",

@@ -166,7 +166,7 @@ return {
                 ipynb = { "deno_fmt" },
                 lua = { "stylua" },
                 tex = { "tex-fmt" },
-                python = { "ruff_format", "injected" },
+                python = { "ruff_format" },
                 cpp = { "clang-format" },
                 c = { "clang-format" },
             },

@@ -244,66 +244,6 @@ vim.api.nvim_buf_set_keymap(0, 'n', 'gf', '', {
     end,
 })
 
-vim.api.nvim_buf_set_keymap(0, 'n', '<2-LeftMouse>', '', {
-    desc = "Go to",
-    callback = function()
-        local def = GetLink()
-        if def then
-            if def:match("^Definition%s+%((.-)%)") or def:match("^Theorem%s+%((.-)%)") or def:match("^Corollary%s+%((.-)%)") or def:match("^Lemma%s+%((.-)%)") or def:match("^Proposition%s+%((.-)%)") or def:match("^Claim%s+%((.-)%)") or def:match("^Example%s+%((.-)%)") or def:match("^Problem%s+%((.-)%)") then
-                def = def:match("%((.-)%)")
-                fzf.grep({
-                    prompt  = "Rg❯ ",
-                    search  = "**" .. def .. "**",
-                    no_esc  = false,
-                    rg_opts =
-                    "--column --line-number --no-heading --color=always --ignore-case --type=md --max-columns=4096 -e"
-                })
-                return true
-            end
-        end
-        local link = GetLink()
-        if link then
-            link = link:gsub("([%$%(%))%.%+%*%?%[%]%^%|\\%-%{}])", "\\%1"):gsub("%s+", " ")
-            fzf.grep({
-                prompt  = "Rg❯ ",
-                search  =
-                    "(" ..
-                    "^(<!-- )?#+\\s+" ..
-                    link ..
-                    ")" ..
-                    "|" ..
-                    "(" ..
-                    "^\\*\\*(Definition|Theorem|Lemma|Corollary|Proposition|Claim|Example|Problem)\\s+\\(" ..
-                    link ..
-                    "\\)(\\.)?\\*\\*" ..
-                    ")",
-                no_esc  = true,
-                rg_opts =
-                "--column --line-number --no-heading --color=always --ignore-case --type=md --max-columns=4096 -e"
-            })
-        end
-        local path = GetPath()
-        if path then
-            fzf.files({
-                query = path,
-            })
-            return true
-        end
-        local heading = GetHeading()
-        if heading then
-            fzf.grep({
-                prompt  = "Rg❯ ",
-                search  = "**" .. heading .. "**",
-                no_esc  = false,
-                rg_opts =
-                "--column --line-number --no-heading --color=always --ignore-case --type=md --max-columns=4096 -e"
-            })
-            return true
-        end
-        return false
-    end
-})
-
 -- Alias configuration: {target_char = {'alias1', 'alias2'}}
 local aliases = {
     ['$'] = { 'm' },
@@ -747,6 +687,67 @@ end, {
     silent = true,
     desc = "Insert new aligned line in LaTeX environment"
 })
+
+
+-- vim.api.nvim_buf_set_keymap(0, 'n', '<2-LeftMouse>', '', {
+--     desc = "Go to",
+--     callback = function()
+--         local def = GetLink()
+--         if def then
+--             if def:match("^Definition%s+%((.-)%)") or def:match("^Theorem%s+%((.-)%)") or def:match("^Corollary%s+%((.-)%)") or def:match("^Lemma%s+%((.-)%)") or def:match("^Proposition%s+%((.-)%)") or def:match("^Claim%s+%((.-)%)") or def:match("^Example%s+%((.-)%)") or def:match("^Problem%s+%((.-)%)") then
+--                 def = def:match("%((.-)%)")
+--                 fzf.grep({
+--                     prompt  = "Rg❯ ",
+--                     search  = "**" .. def .. "**",
+--                     no_esc  = false,
+--                     rg_opts =
+--                     "--column --line-number --no-heading --color=always --ignore-case --type=md --max-columns=4096 -e"
+--                 })
+--                 return true
+--             end
+--         end
+--         local link = GetLink()
+--         if link then
+--             link = link:gsub("([%$%(%))%.%+%*%?%[%]%^%|\\%-%{}])", "\\%1"):gsub("%s+", " ")
+--             fzf.grep({
+--                 prompt  = "Rg❯ ",
+--                 search  =
+--                     "(" ..
+--                     "^(<!-- )?#+\\s+" ..
+--                     link ..
+--                     ")" ..
+--                     "|" ..
+--                     "(" ..
+--                     "^\\*\\*(Definition|Theorem|Lemma|Corollary|Proposition|Claim|Example|Problem)\\s+\\(" ..
+--                     link ..
+--                     "\\)(\\.)?\\*\\*" ..
+--                     ")",
+--                 no_esc  = true,
+--                 rg_opts =
+--                 "--column --line-number --no-heading --color=always --ignore-case --type=md --max-columns=4096 -e"
+--             })
+--         end
+--         local path = GetPath()
+--         if path then
+--             fzf.files({
+--                 query = path,
+--             })
+--             return true
+--         end
+--         local heading = GetHeading()
+--         if heading then
+--             fzf.grep({
+--                 prompt  = "Rg❯ ",
+--                 search  = "**" .. heading .. "**",
+--                 no_esc  = false,
+--                 rg_opts =
+--                 "--column --line-number --no-heading --color=always --ignore-case --type=md --max-columns=4096 -e"
+--             })
+--             return true
+--         end
+--         return false
+--     end
+-- })
 
 -- local function find_latex_pair(around, opening_delims, closing_delims)
 --     local line = vim.api.nvim_get_current_line()

@@ -33,5 +33,11 @@
 !/uv/
 !/uv/*
 !/uv/**
+!/fuzzel/
+!/fuzzel/*
+!/fuzzel/**
+!/niri/
+!/niri/*
+!/niri/**
 !brave-flags.conf
 !chromium-flags.conf
